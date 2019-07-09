@@ -5,7 +5,6 @@
 // ===============================================================================
 
 var userData = require("../data/friends");
-
 // ===============================================================================
 // ROUTING
 // ===============================================================================
@@ -35,21 +34,49 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.post("/api/friends", function(req, res) {
+    var name = "";
+    var photo= "";
+    var difference = 40;
 
-    var friendMatch = {
-      name: "none",
-      photo: "none"
-    }
-   
-    if (userData.length < 5) {
-      userData.push(req.body);
-      res.json(true);
-    }
-    else {
-      waitListData.push(req.body);
-      res.json(false);
-    }
-  });
+    userData.forEach(function(friend){
+      //variables for matches
+      var friendMatchScores = [];
+      var totalDifference = 40;
+
+      function add (total, num){
+        return total + num;
+      }
+
+      //loops through for each item of scores array and pushes to friendMatchScores
+      for (var i=0; i<userData.length; i++)
+
+      for (var j=0; j<friend.scores.length; j++);
+
+
+
+    })
+
+
+
+
+
+    var friendMatch = friends.scores(function(friends){
+      return friends.scores === userData.scores;
+    })[0]
+    console.log(friendMatch)
+      
+
+
+  }) 
+    
+    
+     
+    
+});
+    
+  
+  }
+  
 
     // Note the code here. Our "server" will respond to a user"s survey result
     // Then compare those results against every user in the database.
@@ -63,15 +90,15 @@ module.exports = function(app) {
  
 
     // Here we take the result of the user"s survey POST and parse it.
-    
+    parseInt
     // This variable will calculate the difference between the user"s scores and the scores of
     // each user in the database
     
 
     // Here we loop through all the friend possibilities in the database.
+
     
       // We then loop through all the scores of each friend
-      
         // We calculate the difference between the scores and sum them into the totalDifference
    
 
