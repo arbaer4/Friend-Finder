@@ -4,7 +4,7 @@
 // These data sources hold arrays of information on all possible friends
 // ===============================================================================
 
-var userData = require("../data/friends");
+var friends = require("../data/friends");
 // ===============================================================================
 // ROUTING
 // ===============================================================================
@@ -16,7 +16,7 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/api/friends", function(req, res) {
-    res.json(userData);
+    res.json(friends);
   });
 
   // API GET Requests
@@ -34,23 +34,29 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.post("/api/friends", function(req, res) {
-    var name = "";
-    var photo= "";
-    var difference = 40;
 
-    userData.forEach(function(friend){
-      //variables for matches
-      var friendMatchScores = [];
-      var totalDifference = 40;
+    console.log(req.body);
 
-      function add (total, num){
-        return total + num;
-      }
+    var newFriend = req.body;
+    friends.push(newFriend);
+    
+    // var name = "";
+    // var photo= "";
+    // var difference = 40;
+
+    // userData.forEach(function(friend){
+    //   //variables for matches
+    //   var friendMatchScores = [];
+    //   var totalDifference = 40;
+
+    //   function add (total, num){
+    //     return total + num;
+    //   }
 
       //loops through for each item of scores array and pushes to friendMatchScores
-      for (var i=0; i<userData.length; i++)
+      // for (var i=0; i<userData.length; i++)
 
-      for (var j=0; j<friend.scores.length; j++);
+      // for (var j=0; j<friend.scores.length; j++);
 
 
 
@@ -60,22 +66,22 @@ module.exports = function(app) {
 
 
 
-    var friendMatch = friends.scores(function(friends){
-      return friends.scores === userData.scores;
-    })[0]
-    console.log(friendMatch)
+    // var friendMatch = friends.scores(function(friends){
+    //   return friends.scores === userData.scores;
+    // })[0]
+    // console.log(friendMatch)
       
 
 
-  }) 
+  }
     
     
      
     
-});
+
     
   
-  }
+
   
 
     // Note the code here. Our "server" will respond to a user"s survey result
@@ -90,7 +96,7 @@ module.exports = function(app) {
  
 
     // Here we take the result of the user"s survey POST and parse it.
-    parseInt
+    // parseInt
     // This variable will calculate the difference between the user"s scores and the scores of
     // each user in the database
     

@@ -226,15 +226,14 @@
     
 
       // If all required fields are filled
-      if (filledOut()) {
-        // Create an object for the user"s data
+      // Create an object for the user"s data
         var userData = {
          name: $("#name").val().trim(),
          photo: $("#photo").val().trim(),
-         scores: $[$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
+         scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
         };
         
-        filledOut()
+      
 
     console.log(userData);
 
@@ -245,16 +244,16 @@
         })
       // Show the modal with the best match
 
-        .done (function(data){
-          $(".modal-body").append("<h1>New friend found!</h1>" +
-          "<h3>" + data.name + "</h3>");
+        // .done (function(data){
+        //   $(".modal-body").append("<h1>New friend found!</h1>" +
+        //   "<h3>" + data.name + "</h3>");
 
 
-        });
+        // });
 
-      } else {
-        alert("Please fill out all fields before submitting!");
-      }
+      // } else {
+      //   alert("Please fill out all fields before submitting!");
+      // }
     });
   </script>
 </body>
